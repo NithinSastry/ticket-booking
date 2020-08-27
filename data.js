@@ -1,4 +1,4 @@
-const ticketInfo = {
+const tickets = {
   club: {
     price: 236,
     rows: [
@@ -127,3 +127,4 @@ const ticketInfo = {
     ],
   },
 };
+export default tickets;

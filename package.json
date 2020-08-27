@@ -1,0 +1,19 @@
+{
+  "name": "ticket-booking",
+  "version": "1.0.0",
+  "description": "programming assignment. Create a UI like book my show ticket booking system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NithinSastry/ticket-booking.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NithinSastry/ticket-booking/issues"
+  },
+  "homepage": "https://github.com/NithinSastry/ticket-booking#readme"
+}

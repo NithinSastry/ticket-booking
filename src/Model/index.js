@@ -5,12 +5,19 @@ import EVENTS from '../controller/event';
 
 class TicketModel {
   constructor() {
+    this.currentCategory = '';
     this.tickets = getTickets();
     this.eventHub = getEventHub();
     this.eventHub.publish(EVENTS.DATA_LOADED, this.tickets);
     this.eventHub.subscribe(EVENTS.TICKET_SELECTED, this.onTicketSelect);
   }
   onTicketSelect = ({ category, rowId, seatNo, numTickets }) => {
+    this.currentCategory =
+      this.currentCategory.length === 0 ? category : this.currentCategory;
+    if (this.currentCategory !== category) {
+      alert('all tickets must be selected only from one category');
+      return;
+    }
     if (category && rowId) {
       const categoryInfo = this.tickets.categories.find((info) => {
         return info.name === category;

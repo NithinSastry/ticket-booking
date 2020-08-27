@@ -6,19 +6,21 @@ class TicketWindowView {
     this.categories = categories;
     this.appDiv = document.querySelector('#app');
     this.appDiv.addEventListener('click', (e) => {
-      const category = e.target.dataset.category;
-      const rowId = e.target.dataset.rowid;
-      const seatNo = e.target.dataset.seatno;
+      if (e.target.tagName === 'BUTTON') {
+        const category = e.target.dataset.category;
+        const rowId = e.target.dataset.rowid;
+        const seatNo = e.target.dataset.seatno;
 
-      const numTickets = parseInt(
-        document.querySelector('#selectTickets').value
-      );
-      getEventHub().publish(EVENTS.TICKET_SELECTED, {
-        category,
-        rowId,
-        seatNo,
-        numTickets,
-      });
+        const numTickets = parseInt(
+          document.querySelector('#selectTickets').value
+        );
+        getEventHub().publish(EVENTS.TICKET_SELECTED, {
+          category,
+          rowId,
+          seatNo,
+          numTickets,
+        });
+      }
     });
     this.getMarkup();
   }

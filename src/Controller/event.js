@@ -1,4 +1,6 @@
-export const EVENTS = {
+const EVENTS = {
   TICKET_SELECTED: 'TICKET_SELECTED',
   DATA_LOADED: 'DATA_LOADED',
 };
+
+export default EVENTS;

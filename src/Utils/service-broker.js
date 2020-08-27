@@ -5,5 +5,5 @@ export const setTickets = (data = {}) => {
 };
 
 export const getTickets = () => {
-  storage.getItem('tickets');
+  return JSON.parse(storage.getItem('tickets'));
 };

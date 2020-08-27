@@ -1,6 +1,6 @@
 import Tickets from '../data';
-import { setTickets } from './Utils/service-broker';
-import TicketModel from './Model/index';
+import { setTickets } from './utils/service-broker';
+import TicketModel from './model/index';
 
 //set the initial ticket data in the local storage
 console.log(Tickets);

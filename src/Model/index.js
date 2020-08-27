@@ -1,8 +1,8 @@
 //maintains the state of the application.
 //invokes service broker API to store data into local storage
-import { getTickets } from './../Utils/service-broker';
-import { getEventHub } from './../Controller/event-hub';
-import EVENTS from './../Controller/event';
+import { getTickets } from '../utils/service-broker';
+import { getEventHub } from '../controller/event-hub';
+import EVENTS from '../controller/event';
 
 class TicketModel {
   constructor() {

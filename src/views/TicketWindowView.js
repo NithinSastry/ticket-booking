@@ -1,14 +1,26 @@
 import Category from './Category';
+import { getEventHub } from './../controller/event-hub';
+import EVENTS from '../controller/event';
 class TicketWindowView {
   constructor({ categories }) {
     this.categories = categories;
     this.appDiv = document.querySelector('#app');
+    this.appDiv.addEventListener('click', (e) => {
+      const category = e.target.dataset.category;
+      const rowId = e.target.dataset.rowid;
+      const seatNo = e.target.dataset.seatno;
+      getEventHub().publish(EVENTS.TICKET_SELECTED, {
+        category,
+        rowId,
+        seatNo,
+      });
+    });
     this.getMarkup();
   }
   getCategories = () => {
     let categoryMarkup = '';
     this.categories.forEach((category) => {
-      categoryMarkup += new Category().getMarkup(category);
+      categoryMarkup += new Category(category).getMarkup();
     });
     return categoryMarkup;
   };

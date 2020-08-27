@@ -1,22 +1,24 @@
 import Row from './Row';
 class Category {
-  constructor() {}
+  constructor(category) {
+    this.category = category;
+  }
   getRows = (rows) => {
     let rowMarkup = '';
     rows.forEach((row) => {
-      rowMarkup += new Row().getMarkup(row);
+      rowMarkup += new Row(row, this.category.name).getMarkup(row);
     });
     return rowMarkup;
   };
-  getMarkup = ({ name, price, rows }) => {
+  getMarkup = () => {
     return `
         <div class="category">
             <div class="category-heading">
-                ${name} - Rs. ${price}
+                ${this.category.name} - Rs. ${this.category.price}
             </div>
             <hr />
             <div class="rows">
-                ${this.getRows(rows)}
+                ${this.getRows(this.category.rows)}
             </div>
         </div>
       `;

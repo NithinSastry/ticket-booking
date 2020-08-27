@@ -19,3 +19,18 @@
   justify-content: space-between;
   margin: 10px;
 }
+
+button {
+  font-size: 20px;
+}
+
+.booked {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.35;
+  box-shadow: none;
+}
+
+.selected {
+  background-color: green;
+}

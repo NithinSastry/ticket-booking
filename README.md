@@ -21,3 +21,4 @@ programming assignment. Create a UI like book my show ticket booking system
 2. cd ticket-booking
 3. npm i
 4. npm run build
+5. visit http://localhost:3000 in the browser

@@ -28,7 +28,7 @@ class Row {
     const [begin, end] = this.row.range.split('-');
     markup = `
         <div class='row' id="row-${this.row.id}">
-            <div>
+            <div class='row-id'>
                 ${this.row.id}
             </div>
             <div class='seats'>
@@ -44,15 +44,17 @@ class Row {
     return markup;
   };
   reBuildMarkup = ({ rowData }) => {
-    this.row = rowData;
-    const [begin, end] = this.row.range.split('-');
-    const seatsDiv = document.querySelector(`#row-${this.row.id} > .seats`);
-    seatsDiv.innerHTML = this.getSeats(
-      parseInt(begin),
-      parseInt(end),
-      this.row.booked,
-      this.row.selected
-    );
+    if (rowData.id === this.row.id) {
+      this.row = rowData;
+      const [begin, end] = this.row.range.split('-');
+      const seatsDiv = document.querySelector(`#row-${this.row.id} > .seats`);
+      seatsDiv.innerHTML = this.getSeats(
+        parseInt(begin),
+        parseInt(end),
+        this.row.booked,
+        this.row.selected
+      );
+    }
   };
 }
 

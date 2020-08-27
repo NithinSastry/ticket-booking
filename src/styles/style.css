@@ -10,6 +10,11 @@
   margin: 20px;
 }
 
+.category-heading,
+.row-id {
+  font-size: 20px;
+}
+
 .categories {
   width: 70%;
 }
@@ -19,6 +24,10 @@
   justify-content: space-between;
   margin: 10px;
 }
+
+/* .row-id {
+  font-size: 20px;
+} */
 
 button {
   font-size: 20px;

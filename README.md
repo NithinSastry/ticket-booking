@@ -14,3 +14,10 @@ programming assignment. Create a UI like book my show ticket booking system
 
 1. Removal of currently selected seats is absent (point no 3 in problem statement)
 2. Check for number of seats is absent
+
+# Steps to install
+
+1. Clone the repo
+2. cd ticket-booking
+3. npm i
+4. npm run build
